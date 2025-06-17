@@ -1,0 +1,71 @@
+.feature-image-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  background-color: #8B5CF6;
+  border-radius: 20px;
+  padding: 40px 40px 0px 40px;
+}
+
+.feature-phone-image {
+  width: 280px;
+  height: 500px;
+  object-fit: contain;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+/* Add animation for image transitions */
+.feature-phone-image-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.feature-phone-image-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.feature-phone-image-exit {
+  opacity: 1;
+  transform: translateY(0);
+  position: absolute;
+}
+
+.feature-phone-image-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Feature item styles */
+.feature-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Style for unselected features */
+.feature-item:not(.active) .feature-icon-wrapper svg path {
+  stroke: #9CA3AF; /* Grey color for unselected icons */
+}
+
+.feature-item:not(.active) .feature-item-title {
+  color: #9CA3AF; /* Grey color for unselected text */
+}
+
+/* Style for active features */
+.feature-item.active .feature-icon-wrapper svg path {
+  stroke: #8B5CF6; /* Purple color for active icons */
+}
+
+.feature-item.active .feature-item-title {
+  color: #111827; /* Dark color for active text */
+} 
